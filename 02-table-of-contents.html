@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of Contents</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .toc-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: block;
+            border-left: 5px solid var(--meli-blue);
+        }
+
+        .toc-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(52, 131, 250, 0.3);
+        }
+
+        .toc-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--meli-blue);
+            margin-bottom: 10px;
+        }
+
+        .toc-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--meli-dark);
+        }
+
+        .toc-description {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .toc-item {
+                padding: 20px;
+            }
+
+            .toc-number {
+                font-size: 1.5em;
+            }
+
+            .toc-title {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .toc-item {
+                padding: 15px;
+            }
+
+            .toc-number {
+                font-size: 1.3em;
+            }
+
+            .toc-title {
+                font-size: 1.1em;
+            }
+
+            .toc-description {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">MELI</div>
+            <h1>Table of Contents</h1>
+            <h2>Professional Services Proposal</h2>
+        </div>
+
+        <div class="slide-content">
+            <div class="toc-grid">
+                <a href="03-transmittal-letter.html" class="toc-item">
+                    <div class="toc-number">01</div>
+                    <div class="toc-title">Transmittal Letter</div>
+                    <div class="toc-description">Introduction and overview of the engagement</div>
+                </a>
+
+                <a href="04-current-situation.html" class="toc-item">
+                    <div class="toc-number">02</div>
+                    <div class="toc-title">Current Situation</div>
+                    <div class="toc-description">Understanding MELI's context and challenges</div>
+                </a>
+
+                <a href="05-objectives-scope.html" class="toc-item">
+                    <div class="toc-number">03</div>
+                    <div class="toc-title">Objectives & Scope</div>
+                    <div class="toc-description">Project goals and boundaries</div>
+                </a>
+
+                <a href="06-methodology.html" class="toc-item">
+                    <div class="toc-number">04</div>
+                    <div class="toc-title">Project Methodology</div>
+                    <div class="toc-description">Phases, activities, and deliverables</div>
+                </a>
+
+                <a href="07-schedule.html" class="toc-item">
+                    <div class="toc-number">05</div>
+                    <div class="toc-title">Work Schedule</div>
+                    <div class="toc-description">Timeline and key milestones</div>
+                </a>
+
+                <a href="08-organization.html" class="toc-item">
+                    <div class="toc-number">06</div>
+                    <div class="toc-title">Project Organization</div>
+                    <div class="toc-description">Team structure, roles, and responsibilities</div>
+                </a>
+
+                <a href="09-pricing.html" class="toc-item">
+                    <div class="toc-number">07</div>
+                    <div class="toc-title">Pricing</div>
+                    <div class="toc-description">Fee structure and investment details</div>
+                </a>
+
+                <a href="10-success-factors.html" class="toc-item">
+                    <div class="toc-number">08</div>
+                    <div class="toc-title">Success Factors</div>
+                    <div class="toc-description">Critical factors and assumptions</div>
+                </a>
+
+                <a href="11-governance.html" class="toc-item">
+                    <div class="toc-number">09</div>
+                    <div class="toc-title">Governance & Communication</div>
+                    <div class="toc-description">Project governance framework and protocols</div>
+                </a>
+
+                <a href="12-closing.html" class="toc-item">
+                    <div class="toc-number">10</div>
+                    <div class="toc-title">Next Steps</div>
+                    <div class="toc-description">Value proposition and call to action</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Mercado Libre - People Support SSC Implementation</span>
+            <span>Page 2</span>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="index.html" class="nav-btn">← Back</a>
+        <a href="03-transmittal-letter.html" class="nav-btn">Next →</a>
+    </div>
+</body>
+</html>

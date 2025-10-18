@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Factors</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .factors-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .factor-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .factor-section h3 {
+            color: var(--meli-blue);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .factor-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--meli-blue) 0%, #667eea 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .factor-item {
+            background: var(--meli-light);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--meli-blue);
+            transition: all 0.3s ease;
+        }
+
+        .factor-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .factor-item h4 {
+            color: var(--meli-blue);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .assumptions-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 2px solid var(--meli-blue);
+        }
+
+        .assumptions-section h3 {
+            color: var(--meli-blue);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .assumption-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .assumption-category {
+            color: var(--meli-blue);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        @media (max-width: 768px) {
+            .factors-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .factor-section {
+                padding: 25px;
+            }
+
+            .factor-section h3 {
+                font-size: 1.2em;
+            }
+
+            .factor-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3em;
+            }
+
+            .factor-item {
+                padding: 15px;
+            }
+
+            .assumptions-section {
+                padding: 25px;
+            }
+
+            .assumption-card {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .factor-section {
+                padding: 20px;
+            }
+
+            .factor-section h3 {
+                font-size: 1.1em;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .factor-item h4 {
+                font-size: 1em;
+            }
+
+            .assumptions-section {
+                padding: 20px;
+            }
+
+            .assumptions-section h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">MELI</div>
+            <h1>Success Factors & Assumptions</h1>
+            <h2>Keys to Project Success</h2>
+        </div>
+
+        <div class="slide-content">
+            <h3 class="section-title">Critical Success Factors</h3>
+
+            <div class="factors-grid">
+                <div class="factor-section">
+                    <h3>
+                        <div class="factor-icon">🎯</div>
+                        <span>From MELI</span>
+                    </h3>
+
+                    <div class="factor-item">
+                        <h4>Stakeholder Availability</h4>
+                        <p>Active participation in workshops, interviews, and data collection processes across all process areas and countries.</p>
+                    </div>
+
+                    <div class="factor-item">
+                        <h4>Information Access</h4>
+                        <p>Timely provision of operational data, management information, process documentation, and organizational details.</p>
+                    </div>
+
+                    <div class="factor-item">
+                        <h4>Decision-Making Agility</h4>
+                        <p>Prompt reviews of deliverables and quick validation of improvement opportunities and strategic directions.</p>
+                    </div>
+
+                    <div class="factor-item">
+                        <h4>Executive Sponsorship</h4>
+                        <p>Visible leadership support and commitment from John Perez and the senior management team.</p>
+                    </div>
+
+                    <div class="factor-item">
+                        <h4>Change Readiness</h4>
+                        <p>Openness to process changes and organizational transformation across the HR function.</p>
+                    </div>
+                </div>
+
+                <div class="factor-section">
+                    <h3>
+                        <div class="factor-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">💼</div>
+                        <span>From Consulting Team</span>
+                    </h3>
+
+                    <div class="factor-item">
+                        <h4>Industry Expertise</h4>
+                        <p>Deep knowledge of Shared Service Center implementations in Latin America and HR operations optimization.</p>
+                    </div>
+
+                    <div class="factor-item">
+                        <h4>Proven Methodology</h4>
+                        <p>Application of proprietary frameworks and accelerators tested in similar engagements.</p>
+                    </div>
+
+                    <div class="factor-item">
+                        <h4>Best Practices</h4>
+                        <p>Leveraging global best practices in SSC design and HR process standardization.</p>
+                    </div>
+
+                    <div class="factor-item">
+                        <h4>Multidisciplinary Team</h4>
+                        <p>Combining expertise in organizational design, process optimization, change management, and technology.</p>
+                    </div>
+
+                    <div class="factor-item">
+                        <h4>Hands-on Approach</h4>
+                        <p>Results-oriented methodology with focus on practical implementation and measurable outcomes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="assumptions-section">
+                <h3>Project Assumptions</h3>
+
+                <div class="two-column" style="gap: 20px;">
+                    <div>
+                        <div class="assumption-card">
+                            <div class="assumption-category">Technical Assumptions</div>
+                            <ul class="styled-list">
+                                <li>SAP Success Factors will remain the core HR platform</li>
+                                <li>Current technology infrastructure can support centralized processes</li>
+                                <li>API integrations are feasible between systems</li>
+                                <li>Data quality is sufficient for analysis</li>
+                            </ul>
+                        </div>
+
+                        <div class="assumption-card">
+                            <div class="assumption-category">Operational Assumptions</div>
+                            <ul class="styled-list">
+                                <li>Current process documentation is available or can be quickly created</li>
+                                <li>Key stakeholders across all countries are accessible</li>
+                                <li>Historical data on volumes, FTEs, and costs is available</li>
+                                <li>No major organizational restructuring during project</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="assumption-card">
+                            <div class="assumption-category">Documentation Requirements</div>
+                            <ul class="styled-list">
+                                <li>Process maps and SOPs (current and historical)</li>
+                                <li>Organizational charts and role descriptions</li>
+                                <li>Performance metrics and KPIs</li>
+                                <li>Technology architecture documentation</li>
+                                <li>Compliance and regulatory requirements</li>
+                            </ul>
+                        </div>
+
+                        <div class="assumption-card">
+                            <div class="assumption-category">Timeline Assumptions</div>
+                            <ul class="styled-list">
+                                <li>Project starts within 2 weeks of approval</li>
+                                <li>No holiday periods during the 7-week engagement</li>
+                                <li>Decisions made within 5 business days</li>
+                                <li>Weekly progress meetings maintained</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="slide-footer">
+            <span>Mercado Libre - People Support SSC Implementation</span>
+            <span>Page 10</span>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="09-pricing.html" class="nav-btn">← Back</a>
+        <a href="11-governance.html" class="nav-btn">Next →</a>
+    </div>
+</body>
+</html>

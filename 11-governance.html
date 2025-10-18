@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Governance & Communication</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .governance-section {
+            margin-top: 30px;
+        }
+
+        .governance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .governance-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #ff9800;
+            transition: all 0.3s ease;
+        }
+
+        .governance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .governance-card h4 {
+            color: #e65100;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .governance-icon {
+            font-size: 1.5em;
+        }
+
+        @media (max-width: 768px) {
+            .governance-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .governance-card {
+                padding: 20px;
+            }
+
+            .governance-card h4 {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .governance-card {
+                padding: 15px;
+            }
+
+            .governance-card h4 {
+                font-size: 1em;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .governance-icon {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">MELI</div>
+            <h1>Project Governance & Communication</h1>
+            <h2>Ensuring Project Success</h2>
+        </div>
+
+        <div class="slide-content">
+            <h3 class="section-title">Project Governance Framework</h3>
+
+            <div class="governance-grid">
+                <div class="governance-card">
+                    <h4><span class="governance-icon">🎯</span>Governance Structure</h4>
+                    <ul class="styled-list">
+                        <li>Project Steering Committee: Partner & Senior Director (John Perez)</li>
+                        <li>Weekly status meetings with project directors</li>
+                        <li>Bi-weekly executive briefings for MELI leadership</li>
+                        <li>Deliverable sign-off within 3 business days</li>
+                        <li>Change control process for scope modifications</li>
+                    </ul>
+                </div>
+
+                <div class="governance-card">
+                    <h4><span class="governance-icon">📊</span>Reporting & Metrics</h4>
+                    <ul class="styled-list">
+                        <li>Weekly progress reports with RAG status (Red/Amber/Green)</li>
+                        <li>Milestone completion tracking against baseline</li>
+                        <li>Issue log and risk register maintenance</li>
+                        <li>Budget and timeline adherence monitoring</li>
+                        <li>Quality assurance checkpoints at each phase</li>
+                    </ul>
+                </div>
+
+                <div class="governance-card">
+                    <h4><span class="governance-icon">💬</span>Communication Protocols</h4>
+                    <ul class="styled-list">
+                        <li>Daily stand-ups for project teams (15 minutes)</li>
+                        <li>Dedicated Slack/Teams channel for real-time communication</li>
+                        <li>Shared document repository (SharePoint/Google Drive)</li>
+                        <li>Monthly stakeholder newsletters for broader organization</li>
+                        <li>Post-phase lessons learned sessions</li>
+                    </ul>
+                </div>
+
+                <div class="governance-card">
+                    <h4><span class="governance-icon">⚠️</span>Escalation Path</h4>
+                    <ul class="styled-list">
+                        <li><strong>Level 1:</strong> Project Directors (0-24 hours response)</li>
+                        <li><strong>Level 2:</strong> Partner & Senior Director (24-48 hours)</li>
+                        <li><strong>Level 3:</strong> Executive Steering Committee (48+ hours)</li>
+                        <li><strong>Critical:</strong> Immediate escalation to leadership</li>
+                        <li>Clear escalation criteria and decision rights matrix</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Mercado Libre - People Support SSC Implementation</span>
+            <span>Page 11</span>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="10-success-factors.html" class="nav-btn">← Back</a>
+        <a href="12-closing.html" class="nav-btn">Next →</a>
+    </div>
+</body>
+</html>

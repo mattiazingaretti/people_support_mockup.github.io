@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .pricing-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .pricing-table table {
+            width: 100%;
+            margin: 0;
+        }
+
+        .pricing-table thead {
+            background: linear-gradient(135deg, var(--meli-blue) 0%, #667eea 100%);
+        }
+
+        .pricing-table th {
+            color: white;
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .pricing-table td {
+            padding: 15px;
+        }
+
+        .pricing-table tbody tr:nth-child(even) {
+            background: var(--meli-light);
+        }
+
+        .subtotal-row {
+            background: #e3f2fd !important;
+            font-weight: 600;
+        }
+
+        .total-row {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+            color: white !important;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .summary-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .summary-item {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+        }
+
+        .summary-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .summary-value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .chart-container-pricing {
+            height: 300px;
+            margin: 30px 0;
+        }
+
+        .note-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+
+        .note-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .highlight-value {
+            color: var(--meli-yellow);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .mobile-pricing-cards {
+            display: none;
+        }
+
+        .mobile-role-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .mobile-role-card h4 {
+            color: var(--meli-blue);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--meli-yellow);
+        }
+
+        .mobile-role-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mobile-role-detail:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: var(--meli-blue);
+            margin-top: 10px;
+        }
+
+        .mobile-role-label {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        .mobile-role-value {
+            font-weight: 600;
+        }
+
+        .mobile-totals-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .mobile-totals-card .mobile-role-detail {
+            border-bottom-color: rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        .mobile-totals-card .mobile-role-label {
+            color: rgba(255,255,255,0.9);
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .pricing-table {
+                display: none;
+            }
+
+            .mobile-pricing-cards {
+                display: block;
+            }
+
+            .summary-card {
+                padding: 25px;
+            }
+
+            .summary-value {
+                font-size: 1.8em;
+            }
+
+            .chart-container-pricing {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .summary-value {
+                font-size: 1.5em;
+            }
+
+            .note-box {
+                padding: 15px;
+            }
+
+            .chart-container-pricing {
+                height: 200px;
+            }
+
+            .mobile-role-card {
+                padding: 15px;
+            }
+
+            .mobile-role-card h4 {
+                font-size: 1.1em;
+            }
+
+            .mobile-role-detail {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">MELI</div>
+            <h1>Project Investment</h1>
+            <h2>Fee Structure & Pricing</h2>
+        </div>
+
+        <div class="slide-content">
+            <div class="pricing-grid">
+                <div>
+                    <h3 class="section-title">Professional Fees Breakdown</h3>
+
+                    <div class="pricing-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Dedication</th>
+                                    <th>Hours/Week</th>
+                                    <th>Total Hours</th>
+                                    <th>Rate/Hour</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Partner</strong></td>
+                                    <td>5%</td>
+                                    <td>2</td>
+                                    <td>14</td>
+                                    <td>USD 1,000</td>
+                                    <td>USD 14,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Project Director</strong></td>
+                                    <td>50%</td>
+                                    <td>20</td>
+                                    <td>140</td>
+                                    <td>USD 500</td>
+                                    <td>USD 70,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Senior Consultant</strong></td>
+                                    <td>100%</td>
+                                    <td>40</td>
+                                    <td>280</td>
+                                    <td>USD 300</td>
+                                    <td>USD 84,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Consultant</strong></td>
+                                    <td>100%</td>
+                                    <td>40</td>
+                                    <td>280</td>
+                                    <td>USD 100</td>
+                                    <td>USD 28,000</td>
+                                </tr>
+                                <tr class="subtotal-row">
+                                    <td colspan="5"><strong>Subtotal Professional Fees</strong></td>
+                                    <td><strong>USD 196,000</strong></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">Expenses (non-taxable)</td>
+                                    <td>USD 3,000</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">VAT (15%)</td>
+                                    <td>USD 29,400</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td colspan="5"><strong>TOTAL PROJECT INVESTMENT</strong></td>
+                                    <td><strong>USD 228,400</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Mobile-friendly pricing cards (visible only on mobile) -->
+                    <div class="mobile-pricing-cards">
+                        <div class="mobile-role-card">
+                            <h4>Partner</h4>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Dedication</span>
+                                <span class="mobile-role-value">5%</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Hours/Week</span>
+                                <span class="mobile-role-value">2</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Total Hours</span>
+                                <span class="mobile-role-value">14</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Rate/Hour</span>
+                                <span class="mobile-role-value">USD 1,000</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Total</span>
+                                <span class="mobile-role-value">USD 14,000</span>
+                            </div>
+                        </div>
+
+                        <div class="mobile-role-card">
+                            <h4>Project Director</h4>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Dedication</span>
+                                <span class="mobile-role-value">50%</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Hours/Week</span>
+                                <span class="mobile-role-value">20</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Total Hours</span>
+                                <span class="mobile-role-value">140</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Rate/Hour</span>
+                                <span class="mobile-role-value">USD 500</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Total</span>
+                                <span class="mobile-role-value">USD 70,000</span>
+                            </div>
+                        </div>
+
+                        <div class="mobile-role-card">
+                            <h4>Senior Consultant</h4>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Dedication</span>
+                                <span class="mobile-role-value">100%</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Hours/Week</span>
+                                <span class="mobile-role-value">40</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Total Hours</span>
+                                <span class="mobile-role-value">280</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Rate/Hour</span>
+                                <span class="mobile-role-value">USD 300</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Total</span>
+                                <span class="mobile-role-value">USD 84,000</span>
+                            </div>
+                        </div>
+
+                        <div class="mobile-role-card">
+                            <h4>Consultant</h4>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Dedication</span>
+                                <span class="mobile-role-value">100%</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Hours/Week</span>
+                                <span class="mobile-role-value">40</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Total Hours</span>
+                                <span class="mobile-role-value">280</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Rate/Hour</span>
+                                <span class="mobile-role-value">USD 100</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Total</span>
+                                <span class="mobile-role-value">USD 28,000</span>
+                            </div>
+                        </div>
+
+                        <div class="mobile-totals-card">
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Subtotal Professional Fees</span>
+                                <span class="mobile-role-value">USD 196,000</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">Expenses (non-taxable)</span>
+                                <span class="mobile-role-value">USD 3,000</span>
+                            </div>
+                            <div class="mobile-role-detail">
+                                <span class="mobile-role-label">VAT (15%)</span>
+                                <span class="mobile-role-value">USD 29,400</span>
+                            </div>
+                            <div class="mobile-role-detail" style="font-size: 1.15em; margin-top: 15px; padding-top: 15px; border-top: 2px solid rgba(255,255,255,0.5);">
+                                <span class="mobile-role-label" style="font-weight: bold;">TOTAL INVESTMENT</span>
+                                <span class="mobile-role-value">USD 228,400</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="note-box">
+                        <h4>Payment Terms</h4>
+                        <ul class="styled-list">
+                            <li><strong>20% (USD 45,680)</strong> - After Kick-off Meeting</li>
+                            <li><strong>30% (USD 68,520)</strong> - After Current State Diagnosis</li>
+                            <li><strong>50% (USD 114,200)</strong> - After Final Deliverables</li>
+                        </ul>
+                        <p style="margin-top: 15px; font-size: 0.95em;"><strong>Note:</strong> Invoices payable within 15 days via wire transfer. Unpaid amounts accrue 5% interest.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="summary-card">
+                        <h3 style="margin-bottom: 20px;">Investment Summary</h3>
+
+                        <div class="summary-item">
+                            <div class="summary-label">Base Fees</div>
+                            <div class="summary-value">USD 196K</div>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="summary-label">Project Duration</div>
+                            <div class="summary-value">7 Weeks</div>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="summary-label">Total Hours</div>
+                            <div class="summary-value">714</div>
+                        </div>
+
+                        <div class="summary-item" style="background: rgba(255, 230, 0, 0.2);">
+                            <div class="summary-label">Total Investment</div>
+                            <div class="summary-value" style="color: var(--meli-yellow);">USD 228.4K</div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-top: 20px;">
+                        <h4 style="color: var(--meli-blue); margin-bottom: 15px;">Value Proposition</h4>
+                        <p style="font-size: 0.95em; line-height: 1.6;">
+                            This investment delivers a comprehensive roadmap for SSC implementation, operational efficiency improvements, and a sustainable operating model that will generate ROI within the first 12 months post-implementation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h3 class="section-title">Cost Distribution by Role</h3>
+                <div class="chart-container-pricing">
+                    <canvas id="costChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Mercado Libre - People Support SSC Implementation</span>
+            <span>Page 9</span>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="08-organization.html" class="nav-btn">← Back</a>
+        <a href="10-success-factors.html" class="nav-btn">Next →</a>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('costChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Partner', 'Project Director', 'Senior Consultant', 'Consultant', 'Expenses'],
+                datasets: [{
+                    data: [14000, 70000, 84000, 28000, 3000],
+                    backgroundColor: [
+                        '#f093fb',
+                        '#3483FA',
+                        '#667eea',
+                        '#43e97b',
+                        '#FFE600'
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            font: {
+                                size: 14
+                            },
+                            padding: 15
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.parsed || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = ((value / total) * 100).toFixed(1);
+                                return label + ': USD ' + value.toLocaleString() + ' (' + percentage + '%)';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

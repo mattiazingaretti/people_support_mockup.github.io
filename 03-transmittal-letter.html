@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transmittal Letter</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .letter-content {
+            background: white;
+            padding: 40px;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .letter-header {
+            margin-bottom: 30px;
+        }
+
+        .letter-date {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .letter-recipient {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .letter-body {
+            margin: 30px 0;
+        }
+
+        .letter-body p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .signature-section {
+            margin-top: 50px;
+        }
+
+        .signature-line {
+            border-top: 2px solid var(--meli-dark);
+            width: 300px;
+            margin-top: 60px;
+            padding-top: 10px;
+        }
+
+        .key-points {
+            background: var(--meli-light);
+            padding: 20px;
+            border-left: 4px solid var(--meli-yellow);
+            margin: 20px 0;
+        }
+
+        .key-points h4 {
+            color: var(--meli-blue);
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .letter-content {
+                padding: 25px;
+            }
+
+            .letter-body p {
+                font-size: 0.95em;
+            }
+
+            .signature-line {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .letter-content {
+                padding: 20px;
+                font-size: 0.95em;
+            }
+
+            .letter-body p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">MELI</div>
+            <h1>Transmittal Letter</h1>
+            <h2>Professional Services Proposal</h2>
+        </div>
+
+        <div class="slide-content">
+            <div class="letter-content">
+                <div class="letter-header">
+                    <div class="letter-date">October 18, 2025</div>
+                    <div class="letter-recipient">Mr. John Perez</div>
+                    <div>Senior Director - People Operations</div>
+                    <div>Mercado Libre</div>
+                </div>
+
+                <div class="letter-body">
+                    <p>Dear Mr. Perez,</p>
+
+                    <p>We are pleased to submit this Professional Services Proposal to assist <strong>Mercado Libre</strong> in implementing a centralized <strong>People Support Shared Service Center</strong>. This strategic initiative aims to achieve operational efficiencies, standardize processes, and enhance service delivery across your HR functions spanning 18 countries in Latin America.</p>
+
+                    <div class="key-points">
+                        <h4>Our Value Proposition:</h4>
+                        <ul class="styled-list">
+                            <li>Proven track record in implementing Shared Service Centers across Latin America</li>
+                            <li>Deep expertise in HR process optimization and standardization</li>
+                            <li>Proprietary methodologies that accelerate implementation and reduce risk</li>
+                            <li>Experience with high-growth technology companies in the region</li>
+                        </ul>
+                    </div>
+
+                    <p>We understand that MELI faces significant challenges including inconsistent service levels across countries, limited best practice sharing, and operational inefficiencies. Our approach will help you gain scalability through specialization, guarantee consistent employee experience, and strengthen the strategic role of your People Business Partners.</p>
+
+                    <p>This proposal outlines our methodology for evaluating centralization opportunities, designing the new operating model, and developing a comprehensive implementation roadmap over a <span class="highlight">7-week engagement</span> across three structured phases.</p>
+
+                    <p>We are confident that our partnership will deliver tangible value and position MELI's People function for sustainable growth and excellence.</p>
+                </div>
+
+                <div class="signature-section">
+                    <div>Sincerely,</div>
+                    <div class="signature-line">
+                        <strong>Mattia Zingaretti</strong><br>
+                        CEO<br>
+                        Venice Consulting LLC
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Mercado Libre - People Support SSC Implementation</span>
+            <span>Page 3</span>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="02-table-of-contents.html" class="nav-btn">← Back</a>
+        <a href="04-current-situation.html" class="nav-btn">Next →</a>
+    </div>
+</body>
+</html>

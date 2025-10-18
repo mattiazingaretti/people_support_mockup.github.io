@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Situation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .context-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .challenges-list {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .challenges-list h4 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-item {
+            margin: 20px 0;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* Enhanced spacing for process flow section */
+        .process-flow {
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .process-step {
+            padding: 25px 20px;
+            margin: 0 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 180px;
+        }
+
+        .process-step:not(:last-child)::after {
+            display: none;
+        }
+
+        .process-step .icon {
+            margin-bottom: 15px;
+        }
+
+        .process-step strong {
+            text-align: center;
+        }
+
+        .process-step p {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .context-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stats-box {
+                padding: 25px;
+            }
+
+            .stat-number {
+                font-size: 2.5em;
+            }
+
+            .stat-label {
+                font-size: 1em;
+            }
+
+            .process-step {
+                min-height: auto;
+                padding: 20px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .challenges-list {
+                padding: 15px;
+            }
+
+            .stats-box {
+                padding: 20px;
+            }
+
+            .stat-number {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">MELI</div>
+            <h1>Understanding the Current Situation</h1>
+            <h2>Context and Challenges</h2>
+        </div>
+
+        <div class="slide-content">
+            <div class="context-grid">
+                <div>
+                    <h3 class="section-title">Mercado Libre Overview</h3>
+                    <p style="margin-bottom: 20px;">Mercado Libre is Latin America's leading e-commerce platform, operating across 18 countries with over 174 million users. Founded in 1999, MELI has evolved into a NASDAQ-100 company with five main business units: MarketPlace, Mercado Pago, Mercado Publicado, Mercado Shops, and Mercado Crédito.</p>
+
+                    <div class="challenges-list">
+                        <h4>Current HR Challenges</h4>
+                        <ul class="styled-list">
+                            <li>Inconsistent quality and performance in Talent Acquisition and Development across countries</li>
+                            <li>Limited synergies and best practice sharing between People Business Partners</li>
+                            <li>Lack of standardized operating procedures (SOPs) leading to heterogeneous SLAs</li>
+                            <li>High dependency on key people creating inappropriate risk management</li>
+                            <li>Insufficient segregation of duties and limited talent management</li>
+                            <li>Low HR flexibility during holiday periods</li>
+                            <li>Limited agility to face new challenges (remote work, US expansion)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="stats-box">
+                        <div class="stat-item">
+                            <span class="stat-number">18</span>
+                            <div class="stat-label">Countries of Operation</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">174M+</span>
+                            <div class="stat-label">Active Users</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <div class="stat-label">HR Process Areas</div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-top: 20px;">
+                        <h4 style="color: var(--meli-blue); margin-bottom: 10px;">Strategic Need</h4>
+                        <p style="font-size: 0.95em;">Centralize HR operations to achieve operational efficiencies, standardize processes, and improve service quality for all MELI talents.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <h3 class="section-title">Process Areas to Centralize</h3>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="icon">💰</div>
+                        <strong>Rewards</strong>
+                        <p style="font-size: 0.9em; margin-top: 10px;">Benefits, Payroll, Compensation</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="icon">🎯</div>
+                        <strong>Talent Acquisition</strong>
+                        <p style="font-size: 0.9em; margin-top: 10px;">Recruitment & Onboarding</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="icon">👥</div>
+                        <strong>PBPs</strong>
+                        <p style="font-size: 0.9em; margin-top: 10px;">Strategic HR Support</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="icon">📈</div>
+                        <strong>Talent Development</strong>
+                        <p style="font-size: 0.9em; margin-top: 10px;">Learning & Development</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="icon">🎪</div>
+                        <strong>Culture & Experience</strong>
+                        <p style="font-size: 0.9em; margin-top: 10px;">Events & Engagement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Mercado Libre - People Support SSC Implementation</span>
+            <span>Page 4</span>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="03-transmittal-letter.html" class="nav-btn">← Back</a>
+        <a href="05-objectives-scope.html" class="nav-btn">Next →</a>
+    </div>
+</body>
+</html>

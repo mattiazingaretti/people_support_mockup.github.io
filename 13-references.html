@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References & Credits</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .references-section {
+            margin-top: 30px;
+        }
+
+        .reference-category {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+
+        .reference-category h3 {
+            color: var(--meli-blue);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--meli-yellow);
+        }
+
+        .reference-icon {
+            font-size: 1.5em;
+        }
+
+        .reference-item {
+            background: var(--meli-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--meli-blue);
+        }
+
+        .reference-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .reference-title {
+            font-weight: 600;
+            color: var(--meli-dark);
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .reference-details {
+            font-size: 0.95em;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .reference-link {
+            color: var(--meli-blue);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .reference-link:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe6a5 100%);
+            border: 2px solid #ffc107;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .disclaimer-box h4 {
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .disclaimer-box p {
+            color: #856404;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .copyright-notice {
+            background: var(--meli-dark);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .reference-category {
+                padding: 25px;
+            }
+
+            .reference-category h3 {
+                font-size: 1.2em;
+            }
+
+            .reference-item {
+                padding: 15px;
+            }
+
+            .disclaimer-box {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .reference-category {
+                padding: 20px;
+            }
+
+            .reference-category h3 {
+                font-size: 1.1em;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .reference-item {
+                padding: 12px;
+            }
+
+            .reference-title {
+                font-size: 1em;
+            }
+
+            .reference-details {
+                font-size: 0.9em;
+            }
+
+            .disclaimer-box {
+                padding: 15px;
+            }
+
+            .disclaimer-box h4 {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">MELI</div>
+            <h1>References & Credits</h1>
+            <h2>Sources and Attributions</h2>
+        </div>
+
+        <div class="slide-content">
+            <div class="references-section">
+                <!-- Software Libraries -->
+                <div class="reference-category">
+                    <h3><span class="reference-icon">💻</span>Software Libraries & Technologies</h3>
+
+                    <div class="reference-item">
+                        <div class="reference-title">Chart.js</div>
+                        <div class="reference-details">
+                            JavaScript charting library used for data visualization throughout this presentation.<br>
+                            <strong>License:</strong> MIT License<br>
+                            <strong>Copyright:</strong> © Chart.js Contributors<br>
+                            <strong>Website:</strong> <a href="https://www.chartjs.org" class="reference-link" target="_blank">https://www.chartjs.org</a><br>
+                            <strong>CDN:</strong> <a href="https://cdn.jsdelivr.net/npm/chart.js" class="reference-link" target="_blank">https://cdn.jsdelivr.net/npm/chart.js</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Information -->
+                <div class="reference-category">
+                    <h3><span class="reference-icon">📊</span>Company Information & Data</h3>
+
+                    <div class="reference-item">
+                        <div class="reference-title">Mercado Libre Corporate Information</div>
+                        <div class="reference-details">
+                            Company statistics, historical data, and operational information referenced in this presentation:<br>
+                            <strong>Sources:</strong><br>
+                            • Mercado Libre Official Website: <a href="https://mercadolibre.com" class="reference-link" target="_blank">https://mercadolibre.com</a><br>
+                            • Mercado Libre Investor Relations: <a href="https://investor.mercadolibre.com" class="reference-link" target="_blank">https://investor.mercadolibre.com</a><br>
+                            • NASDAQ Stock Exchange<br>
+                            • Public company filings and annual reports<br><br>
+                            <strong>Key Data Points:</strong><br>
+                            • User base: 174+ million active users<br>
+                            • Founded: 1999<br>
+                            • Geographic presence: 18 countries in Latin America<br>
+                            • Stock listing: NASDAQ-100<br>
+                            • Business units: MarketPlace, Mercado Pago, Mercado Publicado, Mercado Shops, Mercado Crédito
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trademarks -->
+                <div class="reference-category">
+                    <h3><span class="reference-icon">™</span>Trademarks & Intellectual Property</h3>
+
+                    <div class="reference-item">
+                        <div class="reference-title">Mercado Libre Trademarks</div>
+                        <div class="reference-details">
+                            <strong>"Mercado Libre"</strong> and <strong>"MELI"</strong> are registered trademarks of MercadoLibre, Inc.<br>
+                            <strong>"Mercado Pago"</strong>, <strong>"Mercado Shops"</strong>, <strong>"Mercado Crédito"</strong>, and <strong>"Mercado Publicado"</strong> are trademarks or service marks of MercadoLibre, Inc. and/or its affiliates.<br><br>
+                            All trademarks, service marks, and company names are used for identification purposes only and remain the property of their respective owners.
+                        </div>
+                    </div>
+
+                    <div class="reference-item">
+                        <div class="reference-title">Venice Consulting LLC</div>
+                        <div class="reference-details">
+                            Venice Consulting LLC and associated branding are the property of Venice Consulting LLC.<br>
+                            All methodologies, frameworks, and deliverables described in this proposal are proprietary to Venice Consulting LLC.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="disclaimer-box">
+                    <h4>Important Disclaimer</h4>
+                    <p>
+                        This presentation has been prepared by Venice Consulting LLC exclusively for Mercado Libre as a professional services proposal. The information contained herein is based on publicly available information, client-provided data, and Venice Consulting's proprietary research and analysis.
+                    </p>
+                    <p>
+                        All company information, statistics, and data points referenced about Mercado Libre are based on publicly available sources and are believed to be accurate as of the date of this presentation (October 2025). Venice Consulting LLC makes no representations or warranties regarding the accuracy, completeness, or timeliness of any third-party information.
+                    </p>
+                    <p>
+                        The use of Mercado Libre's name, trademarks, and company information in this proposal does not imply endorsement, sponsorship, or affiliation beyond the scope of this professional services engagement.
+                    </p>
+                </div>
+
+                <!-- Copyright Notice -->
+                <div class="copyright-notice">
+                    <p><strong>© 2025 Venice Consulting LLC. All Rights Reserved.</strong></p>
+                    <p>This proposal and all associated materials are confidential and proprietary to Venice Consulting LLC. No part of this presentation may be reproduced, distributed, or transmitted without prior written permission, except as provided for in the engagement agreement with Mercado Libre.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>Mercado Libre - People Support SSC Implementation</span>
+            <span>Page 13</span>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="12-closing.html" class="nav-btn">← Back</a>
+        <a href="index.html" class="nav-btn">🏠 Home</a>
+    </div>
+</body>
+</html>
